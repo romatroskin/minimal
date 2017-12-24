@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
 
-{% seo %}
+    {% seo %}
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <meta name="viewport" content="width=device-width">
@@ -12,12 +12,22 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
+  <script type="text/javascript">
+    var QUOTES = [
+      {% for quote in site.quotes %}{author:'{{quote.author}}',text:'{{quote.text}}'}
+        {% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ];
+  </script>
   <body>
     <div class="wrapper">
       <header>
         <a href="{{ site.github.url }}"> <h1>{{ site.title | default: site.github.repository_name }}</h1> </a>
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-
+        <!-- <p>{{ site.description | default: site.github.project_tagline }}</p> -->
+        <script type="text/javascript">
+          var randomIndex = Math.floor(Math.random() * QUOTES.length);
+          document.write('<p><q>' + QUOTES[randomIndex].text + '</q><br>- ' + QUOTES[randomIndex].author + '</p>');
+        </script>
         {% if site.github.is_project_page %}
           <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ github_name }}</small></a></p>
         {% endif %}
