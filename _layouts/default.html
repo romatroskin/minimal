@@ -14,7 +14,7 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
   $(function() {
-    $.getJSON('https://gist.githubusercontent.com/romatroskin/6d32e7ec0ca0cd44670f0de771072a5a/raw/598b237fcef447e74ae095b989ca82ffec977f98/quotes.json', function(data) {
+    $.getJSON('https://gist.githubusercontent.com/romatroskin/6d32e7ec0ca0cd44670f0de771072a5a/raw/dcb7753294b228a344ad784e11cc12e18a07178d/quotes.json', function(data) {
       var index = Math.floor(Math.random() * data.quotes.length);
       var bqe = document.getElementById("bq");
       bqe.innerHTML ='<blockquote><p><span class="glitch1">' + data.quotes[index].text +
