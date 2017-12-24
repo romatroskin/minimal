@@ -28,7 +28,7 @@
     <div class="wrapper">
       <header>
         <a href="{{ site.github.url }}"> <h1><div class="glitch-text">{{ site.title | default: site.github.repository_name }}</div></h1> </a>
-        <div id="bq"></div>
+        <div id="bq"></div><br/>
         {% if site.github.is_project_page %}
           <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ github_name }}</small></a></p>
         {% endif %}
@@ -45,11 +45,11 @@
           </ul>
         {% endif %}
       </header>
-      <section>
-
-      {{ content }}
-
-      </section>
+        <section>
+          {{ content }}
+          <p><span class="glitch3">Coming soon... :)</span></p>
+          <img src="https://assets-cdn.github.com/images/icons/emoji/octocat.png"/>
+        </section>
       <footer>
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>

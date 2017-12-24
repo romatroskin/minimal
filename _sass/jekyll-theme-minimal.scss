@@ -301,6 +301,16 @@ span.glitch:first-child {
   margin-right: 20px;
 }
 
+span.glitch3:last-child {
+  position: relative;
+  &:after {
+    @include gitchText(2px, '1337!@$b40c', 30, 15);
+  }
+  &:before {
+    @include gitchText(-2px, 'C0m1N3500N', 30, 15);
+  }
+}
+
 span.glitch2:last-child {
   position: relative;
   &:after {
