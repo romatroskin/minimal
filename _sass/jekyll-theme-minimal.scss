@@ -1,16 +1,17 @@
+@import "variables";
 @import "fonts";
 @import "rouge-github";
 
 body {
-  background-color: #111;
+  background-color: $background-color;
   padding:50px;
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#e4f1fe;
-  font-weight:400;
+  font: 14px/1.5 $font-stack;
+  color: $primary-text-color;
+  font-weight:normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color:#e4f1fe;
+  color: $primary-text-color;
   margin:0 0 20px;
 }
 
@@ -70,13 +71,13 @@ blockquote {
   padding:0px 20px 0 20px;
 }
 
-blockquote p {
+blockquote p:first-child {
   font-style: italic;
   font-weight: normal;
   text-align: end;
 }
 
-blockquote cite {
+blockquote p:last-child {
   font-style: inherit;
   font-weight: bold;
   text-align: start;
@@ -285,11 +286,11 @@ footer {
   }
 }
 
-@mixin gitchText($offset, $text, $duration, $delay) {
+@mixin gitchText($text, $duration, $delay) {
   content: $text;
   position: absolute;
-  left: $offset;
-  top: $offset;
+  left: 2px;
+  top: -2px;
   clip: rect(0, 900px, 0, 0); 
   background-color: #111;
   color: #e4f1fe;
@@ -297,43 +298,35 @@ footer {
   animation-delay: random($delay)+s;
 }
 
-span.glitch:first-child {
-  margin-right: 20px;
-}
-
 span.glitch3:last-child {
   position: relative;
   &:after {
-    @include gitchText(2px, '1337!@$b40c', 30, 15);
+    @include gitchText('1337!@$b40c', 30, 15);
   }
   &:before {
-    @include gitchText(-2px, 'C0m1N3500N', 30, 15);
+    @include gitchText('C0m1N3500N', 30, 15);
   }
 }
 
 span.glitch2:last-child {
   position: relative;
   &:after {
-    @include gitchText(2px, 'f040129)$%##**', 20, 8);
+    @include gitchText('f040129)$%##**', 20, 8);
   }
   &:before {
-    @include gitchText(-2px, '94f6!@#$143781b298ad', 20, 8);
+    @include gitchText('94f6!@#$143781b298ad', 20, 8);
   }
 }
 
 span.glitch1:last-child {
   position: relative;
   &:after {
-    @include gitchText(2px, 'f0401!@#$b40c', 15, 4);
+    @include gitchText('f0401!@#$b40c', 15, 4);
   }
   &:before {
-    @include gitchText(-2px, '94f6!@#$143781b2)$%##d', 15, 4);
+    @include gitchText('94f6!@#$143781b2)$%##d', 15, 4);
   }
 }
-
-// @keyframes fadeWhite {
-//   100% { color: #222; }
-// }
 
 @keyframes glitch {
   $steps: 20;
@@ -349,12 +342,110 @@ span.glitch1:last-child {
   to { opacity: 1 }
 }
 
-%effect {
-  -webkit-filter: url("#glitch");
+.glitch-text {
   filter:url("#glitch");
+  display: inline-block;
 }
 
-.glitch-text {
-  @extend %effect;
-  display: inline-block;
+._12 {
+    font-size: 1.2em;
+}
+._14 {
+    font-size: 1.4em;
+}
+ul {
+    padding:0;
+    list-style: none;
+}
+.footer-social-icons {
+    width: 350px;
+    display:block;
+    margin: 0 auto;
+}
+.social-icon {
+    color: #e4f1fe;
+}
+ul.social-icons {
+    margin-top: 10px;
+}
+.social-icons li {
+    vertical-align: top;
+    display: inline;
+    height: 100px;
+}
+.social-icons a {
+    color: #e4f1fe;
+    text-decoration: none;
+}
+.fa-facebook {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #111;
+}
+.fa-facebook:hover {
+    background-color: #3d5b99;
+}
+.fa-twitter {
+    padding:10px 12px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #111;
+}
+.fa-twitter:hover {
+    background-color: #00aced;
+}
+.fa-rss {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #111;
+}
+.fa-rss:hover {
+    background-color: #eb8231;
+}
+.fa-youtube {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #111;
+}
+.fa-youtube:hover {
+    background-color: #e64a41;
+}
+.fa-linkedin {
+    padding:10px 14px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #111;
+}
+.fa-linkedin:hover {
+    background-color: #0073a4;
+}
+.fa-google-plus {
+    padding:10px 9px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition: .5s;
+    background-color: #111;
+}
+.fa-google-plus:hover {
+    background-color: #e25714;
 }

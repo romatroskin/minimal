@@ -3,32 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
-{% seo %}
-
+    {% seo %}
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <meta name="viewport" content="width=device-width">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-  $(function() {
-    $.getJSON('https://gist.githubusercontent.com/romatroskin/6d32e7ec0ca0cd44670f0de771072a5a/raw/dcb7753294b228a344ad784e11cc12e18a07178d/quotes.json', function(data) {
-      var index = Math.floor(Math.random() * data.quotes.length);
-      var bqe = document.getElementById("bq");
-      bqe.innerHTML ='<blockquote><p><span class="glitch1">' + data.quotes[index].text +
-                '</span></p><cite><span class="glitch2">' + data.quotes[index].author +
-                '</span></cite></blockquote>';
-    });
-  })
-  </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/4080a61846.js"></script>
+    <script src="/assets/js/config.js"></script>
+    <script src="/assets/js/quotes.js"></script>
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <a href="{{ site.github.url }}"> <h1><div class="glitch-text">{{ site.title | default: site.github.repository_name }}</div></h1> </a>
-        <div id="bq"></div><br/>
+        <div class="glitch-text">
+          <a href="{{ site.github.url }}"><h1>{{ site.title | default: site.github.repository_name }}</h1></a>
+        </div>
+        <div>
+          <blockquote>
+            <p><span id="quote-text" class="glitch1"/></p>
+            <cite>
+               <p><span id="quote-author" class="glitch2"/></p>
+           </cite>
+          </blockquote>
+        </div><br/>
         {% if site.show_downloads %}
           <ul>
             <li><a href="{{ site.github.zip_url }}">Download <strong>ZIP File</strong></a></li>
@@ -53,6 +52,14 @@
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
+        <ul class="social-icons">
+            <li><a href="" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-rss"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-google-plus"></i></a></li>
+        </ul>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/romatroskin">romatroskin</a></small></p>
       </footer>
     </div>

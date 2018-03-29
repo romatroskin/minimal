@@ -1,20 +1,9 @@
 title: \ Roman Matroskin
-description: Code for live...
+description: Code for Live!
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
-quotes:
-  - author: David Gelernter
-    text: Beauty is more important in computing than anywhere else in technology because software is so complicated. Beauty is the ultimate defence against complexity.
-  - author: E. W. Dijkstra
-    text: The computing scientist’s main challenge is not to get confused by the complexities of his own making.
-  - author: Gordon Bell
-    text: The cheapest, fastest, and most reliable components are those that aren’t there.
-  - author: Ken Thompson
-    text: One of my most productive days was throwing away 1000 lines of code.
-  - author: Ken Thompson
-    text: When in doubt, use brute force.
-  - author: Jeff Sickel
-    text: Deleted code is debugged code.
-  - author: Brian Kernighan
-    text: Controlling complexity is the essence of computer programming.
+sass:
+  style: compressed
+plugins:
+    - jekyll-assets
